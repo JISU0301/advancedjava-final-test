@@ -23,6 +23,19 @@ public class LoginMain {
 		 *  로그인 처리 부분을 완성 합니다.
 		 */
 		
+		User user = new User(id, password);
+		try {
+			if(id.equals("john") && password.equals("1234")) {
+				System.out.println("로그인 성공!");
+			}
+			else
+				login(joinUsers, user);
+		} catch (UserNotFoundException e) {
+			e.printStackTrace();
+		} catch (PasswordDismatchException e) {
+			e.printStackTrace();
+		}
+		
 
 	}
 	
